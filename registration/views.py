@@ -9,12 +9,11 @@ def regisuser(request):
     "Registration http response"
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        print(request.POST)
         if form.is_valid():
             user = User.objects.create_user(
                 username=request.POST['username'],
                 email=request.POST['email'],
-                password=request.POST['password1'])
+                password=request.POST['password'])
             user.save()
             return HttpResponse('thanks :)')
         else:
