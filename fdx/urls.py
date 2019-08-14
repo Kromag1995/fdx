@@ -18,5 +18,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('registration/', include('registration.urls'))
+    path('registration/', include('registration.urls')),
+    path('', include('social_django.urls', namespace='social')),
 ]

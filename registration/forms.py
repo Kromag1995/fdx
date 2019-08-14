@@ -7,7 +7,7 @@ class UserCreationForm(forms.Form):
     username = forms.CharField(label='Username', max_length=200)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password_conf = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
-    email = forms.EmailField()   
+    email = forms.EmailField()
     def clean(self):
         cleaned_data = super().clean()
         password_1 = cleaned_data.get('password')
